@@ -4,7 +4,6 @@ angular.module('time-wasted-on-overwatch')
       return $http({
         method: 'GET',
         url: 'https://api.lootbox.eu/pc/us/Hunky-1228/profile'
-        // data: coordinates
       })
       .then(
         function(resp) {
@@ -14,10 +13,6 @@ angular.module('time-wasted-on-overwatch')
         }
       );
     };
-    // app.get("https://api.lootbox.eu/pc/us/Hunky-1228/profile")
-    // .end(function (result) {
-    //   console.log(result.status, result.headers, result.body);
-    // });
 
     searchID().then(
       function(resp) {
