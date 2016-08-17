@@ -6,19 +6,19 @@ angular.module('time-wasted-on-overwatch')
         url: 'https://api.lootbox.eu/pc/us/Hunky-1228/profile'
       })
       .then(
-        function(resp) {
+        function (resp) {
           return resp.data;
-        }).catch(function(error) {
+        }).catch(function (error) {
           console.log(error);
         }
       );
     };
 
     searchID().then(
-      function(resp) {
+      function (resp) {
         console.log(resp.data);
         return resp.data;
-      }).catch(function(error) {
+      }).catch(function (error) {
         console.log(error);
       });
 
