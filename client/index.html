@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html ng-app='time-wasted-on-overwatch'>
+<html lang="en" ng-app='time-wasted-on-overwatch'>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title></title>
+  <title>Time Spent on Overwatch</title>
+  <link rel='stylesheet' href="./lib/bootstrap/dist/css/bootstrap.min.css"></link>
+  <link rel='stylesheet' href="./styles.css"></link>
 </head>
-<body>
-  HELLO THERE
-  <div ui-view>
+<body class="container-fluid">
+  <div id="header">
+    <h1>TIME SPENT ON</h1>
+    <img id="logo" src="./lib/overwatch_logo.png">
   </div>
 
+  <div ui-view class="row">
+  </div>
+
+  <script src="./lib/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="./lib/angular/angular.min.js"></script>
   <script type="text/javascript" src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="./app.js"></script>

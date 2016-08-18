@@ -1,3 +1,7 @@
-
-<input ng-model='blizzardID' placeholder='Enter BattleTag and ID'></input><button ng-click="searchID(blizzardID)">Enter</button>
-<img ng-src="{{avatar}}"><span ng-if='inputEntered'> {{username}} has spent {{daysPlayed}} days and {{hoursPlayed}} hours playing Overwatch!</span>
+<div id="inputContainer">
+  <input ng-model='blizzardID' placeholder='Enter BattleTag and ID'></input><button ng-click="searchID(blizzardID)">Enter</button>
+  
+</div>
+<div id="resultsContainer">
+  <img id="avatar" ng-src="{{avatar}}"><span ng-if='inputEntered'> {{username}} has spent {{daysPlayed}} days and {{hoursPlayed}} hours playing Overwatch!</span>
+</div>
