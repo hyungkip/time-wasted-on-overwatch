@@ -1,5 +1,5 @@
 <div class="row form-group" ng-class="{'has-error': validationFailed, 'has-warning': loading}" id="inputContainer">
-    <input type="text" class="form-control" id="textBox" ng-model='blizzardID' placeholder='Enter BattleTag and ID (case-sensitive)' aria-describedby="helpBlock"></input>
+    <input type="text" class="form-control" id="textBox" ng-model='blizzardID' placeholder='Enter BattleTag and ID separated by a hyphen (case-sensitive)' aria-describedby="helpBlock"></input>
     <button type="button" class="btn btn-warning" id="enterButton" ng-click="searchID(blizzardID)">Enter</button>
     <span id="helpBlock" class="help-block" ng-if="validationFailed">Please enter a valid battle.net tag and ID#</span>
     <span id="helpBlock" class="help-block" ng-if="loading">Loading...</span>

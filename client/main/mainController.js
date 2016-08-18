@@ -4,6 +4,8 @@ angular.module('time-wasted-on-overwatch')
     $scope.inputEntered = false;
 
     $scope.searchID = function (id) {
+      $scope.validationFailed = false;
+      $scope.inputEntered = false;
       $scope.loading = true;
       searchLootBoxProfile(id).then( function (data) {
         return retrieveInformation(data);
@@ -13,6 +15,7 @@ angular.module('time-wasted-on-overwatch')
         $scope.loading = false;
         return;
       }).catch( function (error) {
+        $scope.inputEntered = false;
         $scope.validationFailed = true;
         $scope.loading = false;
         console.log(error);
@@ -27,7 +30,6 @@ angular.module('time-wasted-on-overwatch')
       })
       .then(
         function (resp) {
-          $scope.validationSuccess = true;
           return resp.data;
         }).catch( function (error) {
           console.log(error);
