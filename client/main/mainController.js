@@ -3,8 +3,6 @@ angular.module('time-wasted-on-overwatch')
     $scope.daysPlayed, $scope.hoursPlayed, $scope.username, $scope.avatar, $scope.validationFailed;
     $scope.inputEntered = false;
 
-
-
     $scope.searchID = function (id) {
       searchLootBoxProfile(id).then( function (data) {
         return retrieveInformation(data);
