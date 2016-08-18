@@ -3,9 +3,12 @@ h1 {
   text-align: center;
 }
 
-#inputContainer, #resultsContainer{
+#resultsContainer{
   text-align: center;
+  margin: 50px 0 0 0;
 }
+
+
 
 #header {
   padding: 100px 0 0 20px;
@@ -19,4 +22,15 @@ h1 {
 #logo {
   display: block;
   margin: 0 auto;
+}
+
+
+#inputContainer {
+  text-align: center;
+}
+
+#textBox {
+  width: 400px;
+  display: inline;
+  margin-right: -4px;
 }

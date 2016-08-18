@@ -1,32 +1,22 @@
 angular.module('time-wasted-on-overwatch')
   .controller('mainController', ['$scope', '$http', function ($scope, $http) {
-    $scope.daysPlayed, $scope.hoursPlayed, $scope.username, $scope.avatar;
+    $scope.daysPlayed, $scope.hoursPlayed, $scope.username, $scope.avatar, $scope.validationFailed;
     $scope.inputEntered = false;
 
+
+
     $scope.searchID = function (id) {
-
-      // searchLootBoxProfile(id).then( function (data) {
-      //     retrieveInformation(data).then( function (data) {
-      //
-      //       $scope.inputEntered = true;
-      //
-      //       return;
-      //     })
-      //   })
-
-
       searchLootBoxProfile(id).then( function (data) {
         return retrieveInformation(data);
       }).then(function (data) {
         $scope.inputEntered = true;
+        $scope.validationFailed = false;
         return;
       }).catch( function (error) {
+        $scope.validationFailed = true;
         console.log(error);
       });
-
-
-
-  }
+    }
 
 
     var searchLootBoxProfile = function (blizzID) {
@@ -59,6 +49,13 @@ angular.module('time-wasted-on-overwatch')
 
     }
 
+
+    $(document).ready(function(){
+      $('#textBox').keypress(function(e){
+        if(e.keyCode==13)
+        $('#enterButton').click();
+      });
+    });
     // searchID().then(
     //   function (resp) {
     //     console.log(resp.data);

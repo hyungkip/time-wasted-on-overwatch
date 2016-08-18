@@ -1,7 +1,12 @@
-<div id="inputContainer">
-  <input ng-model='blizzardID' placeholder='Enter BattleTag and ID'></input><button ng-click="searchID(blizzardID)">Enter</button>
-  
+<div class="row form-group" ng-class="{'has-error': validationFailed}" id="inputContainer">
+
+    <input type="text" class="form-control" id="textBox" ng-model='blizzardID' placeholder='Enter BattleTag and ID' aria-describedby="helpBlock"></input>
+    <button type="button" class="btn btn-warning" id="enterButton" ng-click="searchID(blizzardID)">Enter</button>
+    <span id="helpBlock" class="help-block" ng-if="validationFailed">Please enter a valid battle.net tag and ID#</span>
 </div>
+
+
+
 <div id="resultsContainer">
   <img id="avatar" ng-src="{{avatar}}"><span ng-if='inputEntered'> {{username}} has spent {{daysPlayed}} days and {{hoursPlayed}} hours playing Overwatch!</span>
 </div>
