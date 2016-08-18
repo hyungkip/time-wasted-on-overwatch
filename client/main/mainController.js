@@ -1,6 +1,6 @@
 angular.module('time-wasted-on-overwatch')
   .controller('mainController', ['$scope', '$http', function ($scope, $http) {
-    $scope.days, $scope.hours, $scope.username, $scope.avatar;
+    $scope.daysPlayed, $scope.hoursPlayed, $scope.username, $scope.avatar;
     $scope.inputEntered = false;
 
     $scope.searchID = function (id) {
@@ -17,9 +17,11 @@ angular.module('time-wasted-on-overwatch')
 
       searchLootBoxProfile(id).then( function (data) {
         return retrieveInformation(data);
-      }).then (function (data) {
+      }).then(function (data) {
         $scope.inputEntered = true;
         return;
+      }).catch( function (error) {
+        console.log(error);
       });
 
 
@@ -46,14 +48,15 @@ angular.module('time-wasted-on-overwatch')
       var competitiveHoursPlayed = parseInt(obj.data.playtime.competitive.split(' ')[0]);
       var quickHoursPlayed = parseInt(obj.data.playtime.quick.split(' ')[0]);
       var totalHoursPlayed = competitiveHoursPlayed + quickHoursPlayed;
-      $scope.days = Math.floor(totalHoursPlayed/24);
-      $scope.hours = totalHoursPlayed - $scope.days*24;
+      $scope.daysPlayed = Math.floor(totalHoursPlayed/24);
+      $scope.hoursPlayed = totalHoursPlayed - $scope.daysPlayed*24;
 
       console.log('HELLO I AM HERE', obj.data)
 
       $scope.username = obj.data.username;
       $scope.avatar = obj.data.avatar;
-      return obj;
+
+
     }
 
     // searchID().then(
