@@ -6,7 +6,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/../client'));
 
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 1337;
 
 var server = app.listen(port, function() {
   console.log('http://localhost:' + port);
