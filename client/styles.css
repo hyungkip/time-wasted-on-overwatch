@@ -1,18 +1,21 @@
+body {
+  background: url(./lib/overwatch-background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
 #header p {
-  font-size: 4vw;
+  font-size: 6vw;
   text-align: center;
   margin-bottom: 0px;
+  font-family: Overwatch;
 }
-
-#resultsContainer{
-  text-align: center;
-  margin: 50px 0 0 0;
-}
-
-
 
 #header {
-  padding: 150px 0 30px 0;
+  padding: 100px 0 30px 0;
 }
 
 #avatar {
@@ -30,24 +33,50 @@
 
 #inputContainer {
   text-align: center;
-  margin: 0 20% 0 20%;
+  margin: 0 10% 0 10%;
   position: relative;
 }
 
-#invalidIcon {
-  position: absolute;
-  padding: 10px;
-  right: 0px;
-  color: ;
-}
-
 #textBox {
-  /*width: 400px;*/
   display: inline;
   margin-right: -4px;
+  width: 80%;
 }
 
 #enterButton {
   display: inline;
-  width: auto;
+}
+
+#username {
+  font-family: Overwatch;
+  font-size: 30px;
+  color: 	#ff9900;
+}
+
+
+#resultsContainer{
+  text-align: center;
+  margin: 50px 0 0 0;
+}
+
+/*#resultsbox1 {
+  margin-left: 30%;
+  float: left;
+  width: 20%;
+}
+
+#resultsbox2 {
+  float: left;
+  width: auto;*/
+
+/*}*/
+
+#resultsbox2 p {
+  vertical-align: middle;
+}
+
+
+@font-face {
+  font-family: "Overwatch";
+  src: url("http://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format('woff');
 }

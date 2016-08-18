@@ -1,14 +1,16 @@
 <div class="row form-group" ng-class="{'has-error': validationFailed}" id="inputContainer">
-    <!-- <i id="invalidIcon" class="glyphicon glyphicon-remove"></i> -->
-    <input type="text" class="form-control" id="textBox" ng-model='blizzardID' placeholder='Enter BattleTag and ID' aria-describedby="helpBlock"></input>
-    <span ng-if="validationFailed" class="glyphicon glyphicon-remove form-control-feedback"></span>
+    <input type="text" class="form-control" id="textBox" ng-model='blizzardID' placeholder='Enter BattleTag and ID (case-sensitive)' aria-describedby="helpBlock"></input>
     <button type="button" class="btn btn-warning" id="enterButton" ng-click="searchID(blizzardID)">Enter</button>
     <span id="helpBlock" class="help-block" ng-if="validationFailed">Please enter a valid battle.net tag and ID#</span>
 </div>
 
 <div id="resultsContainer" ng-if='inputEntered'>
-  <img id="avatar" ng-src="{{avatar}}"><p>{{username}}</p>
-  <p>has spent {{daysPlayed}} days and {{hoursPlayed}} hours playing Overwatch!</p>
+  <span id="resultsbox1">
+    <img id="avatar" ng-src="{{avatar}}"><p id="username">{{username}}</p>
+  </span>
+  <span id="resultsbox2">
+    <p>has spent {{daysPlayed}} days and {{hoursPlayed}} hours playing Overwatch!</p>
+  </span>
 </div>
 <div class="form-group has-error has-feedback">
 
