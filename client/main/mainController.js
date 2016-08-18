@@ -1,17 +1,20 @@
 angular.module('time-wasted-on-overwatch')
   .controller('mainController', ['$scope', '$http', function ($scope, $http) {
-    $scope.daysPlayed, $scope.hoursPlayed, $scope.username, $scope.avatar, $scope.validationFailed;
+    $scope.daysPlayed, $scope.hoursPlayed, $scope.username, $scope.avatar, $scope.validationFailed, $scope.loading;
     $scope.inputEntered = false;
 
     $scope.searchID = function (id) {
+      $scope.loading = true;
       searchLootBoxProfile(id).then( function (data) {
         return retrieveInformation(data);
       }).then(function (data) {
         $scope.inputEntered = true;
         $scope.validationFailed = false;
+        $scope.loading = false;
         return;
       }).catch( function (error) {
         $scope.validationFailed = true;
+        $scope.loading = false;
         console.log(error);
       });
     }
@@ -24,6 +27,7 @@ angular.module('time-wasted-on-overwatch')
       })
       .then(
         function (resp) {
+          $scope.validationSuccess = true;
           return resp.data;
         }).catch( function (error) {
           console.log(error);
@@ -38,9 +42,6 @@ angular.module('time-wasted-on-overwatch')
       var totalHoursPlayed = competitiveHoursPlayed + quickHoursPlayed;
       $scope.daysPlayed = Math.floor(totalHoursPlayed/24);
       $scope.hoursPlayed = totalHoursPlayed - $scope.daysPlayed*24;
-
-      console.log('HELLO I AM HERE', obj.data)
-
       $scope.username = obj.data.username;
       $scope.avatar = obj.data.avatar;
 
@@ -54,13 +55,6 @@ angular.module('time-wasted-on-overwatch')
         $('#enterButton').click();
       });
     });
-    // searchID().then(
-    //   function (resp) {
-    //     console.log(resp.data);
-    //     return resp.data;
-    //   }).catch( function (error) {
-    //     console.log(error);
-    //   });
 
 
   }]);
