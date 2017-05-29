@@ -1,20 +1,25 @@
-<div class="row form-group" ng-class="{'has-error': validationFailed, 'has-warning': loading}" id="inputContainer">
-    <input type="text" class="form-control" id="textBox" ng-model='blizzardID' placeholder='Enter BattleTag and ID separated by a hyphen (case-sensitive)' aria-describedby="helpBlock"></input>
-    <button type="button" class="btn btn-warning" id="enterButton" ng-click="searchID(blizzardID)">Enter</button>
-    <span id="helpBlock" class="help-block" ng-if="validationFailed">Please enter a valid battle.net tag and ID#</span>
-    <span id="helpBlock" class="help-block" ng-if="loading">Loading...</span>
-</div>
-
-<div id="resultsContainer" ng-if='inputEntered'>
-  <span id="resultsbox1">
-    <img id="avatar" ng-src="{{avatar}}"><p id="username">{{username}}</p>
-  </span>
-  <span id="resultsbox2">
-    <p>has spent {{daysPlayed}} {{hoursPlayed}} hours playing Overwatch!</p>
-  </span>
-</div>
-<div class="form-group has-error has-feedback">
+<div id="mainContainer">
+  <div id="inputContainer" class="form-group">
+      <input type="text" id="idInput" class="form-control" ng-model="blizzardID" placeholder='Blizzard ID' aria-describedby="helpBlock"></input>
+      <input type="text" id="tagInput" class="form-control" ng-model="blizzardTag" placeholder='Tag' aria-describedby="helpBlock"></input>
+      <select id="regionInput" class="form-control" ng-model="blizzardRegion">
+        <option selected>US</option>
+        <option>EU</option>
+        <option>KR</option>
+      </select>
+      <button type="button" id="enterButton" class="btn btn-warning" ng-click="searchProfile(blizzardID, blizzardTag, blizzardRegion)">Enter</button>
+      <span id="errorMessage"></span>
+  </div>
 
 
-  <!-- <span id="inputError2Status" class="sr-only">(error)</span> -->
+  <div id="resultsContainer" ng-if='inputEntered'>
+    <span id="resultsbox1">
+      <img id="avatar" ng-src="{{avatar}}"><p id="username">{{username}}</p>
+    </span>
+    <span id="resultsbox2">
+      <p>has spent {{daysPlayed}} {{hoursPlayed}} hours playing Overwatch!</p>
+    </span>
+  </div>
+
+
 </div>

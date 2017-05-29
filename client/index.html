@@ -1,44 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='time-wasted-on-overwatch'>
-<script type="text/javascript">
-  //KeenAsync plugin
-  !function(name,path,ctx){
-    var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
-  }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.0.3.min.js',this);
-  KeenAsync.ready(function(){
-    // Configure a client instance
-    var client = new KeenAsync({
-      projectId: '57b893fe8db53dfda8a6c981',
-      writeKey: 'BDAF2DC453D1073C4AC3395B0F2ABA43A313B685068FD48162E5E7B1863E5857F822B080D1EB0E56F7E8F81341C944A97835BE911456B0B3602E2E9CC33D1EF838305ACA8FDD9D6456765B46CD3ED8C034115E8D9B140ED0CC02EF42ECADBE39'
-    });
+<html lang="en" ng-app='time-spent-on-overwatch'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Time Spent on Overwatch</title>
+    <link rel='stylesheet' href="./lib/bootstrap/dist/css/bootstrap.min.css"></link>
+    <link rel='stylesheet' href="./styles.css"></link>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>`
+  </head>
+  <body class="container-fluid">
 
-    // Record an event
-    client.recordEvent('pageviews', {
-      title: document.title
-    });
-  });
-</script>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Time Spent on Overwatch</title>
-  <link rel='stylesheet' href="./lib/bootstrap/dist/css/bootstrap.min.css"></link>
-  <link rel='stylesheet' href="./styles.css"></link>
-  <link rel="shortcut icon" type="image/x-icon" href="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/6/64/Favicon.ico"/>`
-</head>
-<body class="container-fluid">
-  <div id="header">
-    <p>TIME YOU SPENT ON</p>
-    <img id="logo" src="./assets/overwatch_logo.png">
-  </div>
+    <div id="header">
+      <p>TIME YOU SPENT ON</p>
+      <img id="logo" src="./assets/overwatch_logo.png">
+    </div>
 
-  <div ui-view class="row">
-  </div>
+    <div ui-view></div>
 
-  <script src="./lib/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="./lib/angular/angular.min.js"></script>
-  <script type="text/javascript" src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script src="./app.js"></script>
-  <script src="./main/mainController.js"></script>
-</body>
+    <script type="text/javascript" src="./lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="./main/mainController.js"></script>
+    <script type="text/javascript" src="./main/mainFactory.js"></script>
+  </body>
 </html>

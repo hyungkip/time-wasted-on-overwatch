@@ -6,7 +6,6 @@ body {
   background-size: cover;
 }
 
-
 #header p {
   font-size: 6vw;
   text-align: center;
@@ -15,7 +14,7 @@ body {
 }
 
 #header {
-  padding: 100px 0 30px 0;
+  padding: 50px 0 30px 0;
 }
 
 #avatar {
@@ -30,21 +29,42 @@ body {
   height: auto;
 }
 
+/*main page*/
+#errorMessage {
+  color: red;
+  text-align: center;
+}
+
+#mainContainer {
+  margin: 100 0 100 0;
+  /*background-color: grey;*/
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  );
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 95px;
+}
+
+#tagInput, #idInput, #regionInput, #enterButton {
+  display: inline-block;
+}
+
+#idInput {
+  width: calc(100% - 200px)
+}
+
+#tagInput {
+  width: 75px;
+}
+
+#regionInput {
+  width: 50px;
+}
 
 #inputContainer {
-  text-align: center;
-  margin: 0 10% 0 10%;
-  position: relative;
-}
-
-#textBox {
-  display: inline;
-  margin-right: -4px;
-  width: 80%;
-}
-
-#enterButton {
-  display: inline;
+  margin-bottom: 0px
 }
 
 #username {
@@ -53,28 +73,14 @@ body {
   color: 	#ff9900;
 }
 
-
 #resultsContainer{
   text-align: center;
   margin: 50px 0 0 0;
 }
 
-/*#resultsbox1 {
-  margin-left: 30%;
-  float: left;
-  width: 20%;
-}
-
-#resultsbox2 {
-  float: left;
-  width: auto;*/
-
-/*}*/
-
 #resultsbox2 p {
   vertical-align: middle;
 }
-
 
 @font-face {
   font-family: "Overwatch";

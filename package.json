@@ -1,27 +1,23 @@
 {
-  "name": "time-wasted-on-overwatch",
+  "name": "time-spent-on-overwatch",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Find out how much time you spent on Overwatch!",
+  "main": "./main/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./server/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hyungkip/time-wasted-on-overwatch.git"
+    "url": "git+https://github.com/hyungkip/time-spent-on-overwatch.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hyungkip/time-wasted-on-overwatch/issues"
+    "url": "https://github.com/hyungkip/time-spent-on-overwatch/issues"
   },
-  "homepage": "https://github.com/hyungkip/time-wasted-on-overwatch#readme",
+  "homepage": "https://github.com/hyungkip/time-spent-on-overwatch#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm install bower -g && bower cache clean && bower install"
   }
 }

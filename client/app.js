@@ -1,9 +1,6 @@
-angular.module('time-wasted-on-overwatch', [
+angular.module('time-spent-on-overwatch', [
   'ui.router'
-])
-.config(function ($stateProvider, $urlRouterProvider) {
-
-
+]).config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider.state('main', {
     url: '/main',

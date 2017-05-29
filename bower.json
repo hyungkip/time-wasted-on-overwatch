@@ -1,10 +1,10 @@
 {
-  "name": "time-wasted-on-overwatc",
-  "description": "",
+  "name": "time-spent-on-overwatch",
+  "description": "Find out how much time you spent on Overwatch!",
   "main": "index.js",
   "authors": [],
   "license": "ISC",
-  "homepage": "https://github.com/hyungkip/time-wasted-on-overwatch#readme",
+  "homepage": "https://github.com/hyungkip/time-spent-on-overwatch#readme",
   "ignore": [
     "**/.*",
     "node_modules",
