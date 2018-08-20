@@ -3,9 +3,10 @@ angular.module('time-spent-on-overwatch', [
 ]).config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider.state('main', {
-    url: '/main',
-    templateUrl: '/main/mainView.html',
-    controller: 'mainController'
+    url: '/',
+    templateUrl: '/views/search.html',
+    controller: 'search'
   });
-  $urlRouterProvider.otherwise('/main');
+
+  $urlRouterProvider.otherwise('/');
 });

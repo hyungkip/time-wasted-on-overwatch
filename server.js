@@ -10,5 +10,3 @@ var port = process.env.PORT || 1337;
 var server = app.listen(port, function() {
   console.log('http://localhost:' + port);
 });
-
-module.exports = app;

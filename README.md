@@ -9,5 +9,6 @@ After taking on the rigorous hack reactor core curriculum, I had a case of Javas
 
 ## Installation
 ```
+cd time-spent-on-overwatch
 npm install
 ```

@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html lang="en" ng-app='time-spent-on-overwatch'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Time Spent on Overwatch</title>
+    <link rel='stylesheet' href="./lib/bootstrap/dist/css/bootstrap.min.css"></link>
+    <link rel='stylesheet' href="./styles.css"></link>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>`
+  </head>
+  <body class="container-fluid">
+
+    <div id="header">
+      <p>TIME YOU SPENT ON</p>
+      <img id="logo" src="./assets/overwatch_logo.png">
+    </div>
+
+    <div id="mainContainer">
+      <div id="inputContainer" class="form-group">
+          <input type="text" id="idInput" class="form-control" ng-model="blizzardId" placeholder='Blizzard ID' aria-describedby="helpBlock"></input>
+          <input type="text" id="tagInput" class="form-control" ng-model="blizzardTag" placeholder='Tag' aria-describedby="helpBlock"></input>
+          <select id="regionInput" class="form-control" ng-model="blizzardRegion">
+            <option selected>US</option>
+            <option>EU</option>
+            <option>KR</option>
+          </select>
+          <button type="button" id="enterButton" class="btn btn-warning" ng-click="searchProfile(blizzardId, blizzardTag, blizzardRegion)">Enter</button>
+          <span id="errorMessage"></span>
+      </div>
+
+      <div id="comparisonContainer" class="form-group">
+          <input type="text" id="idInput" class="form-control" ng-model="blizzardId" placeholder='Blizzard ID' aria-describedby="helpBlock"></input>
+          <input type="text" id="tagInput" class="form-control" ng-model="blizzardTag" placeholder='Tag' aria-describedby="helpBlock"></input>
+          <select id="regionInput" class="form-control" ng-model="blizzardRegion">
+            <option selected>US</option>
+            <option>EU</option>
+            <option>KR</option>
+          </select>
+
+          <input type="text" id="idInput2" class="form-control" ng-model="blizzardId2" placeholder='Blizzard ID 2' aria-describedby="helpBlock"></input>
+          <input type="text" id="tagInput2" class="form-control" ng-model="blizzardTag2" placeholder='Tag 2' aria-describedby="helpBlock"></input>
+          <select id="regionInput2" class="form-control" ng-model="blizzardRegion2">
+            <option selected>US</option>
+            <option>EU</option>
+            <option>KR</option>
+          </select>
+
+          <button type="button" id="enterButton" class="btn btn-warning" ng-click="compareProfiles(blizzardId, blizzardTag, blizzardRegion, blizzardId2, blizzardTag2, blizzardRegion2)">Enter</button>
+          <span id="errorMessage"></span>
+      </div>
+
+
+      <div id="resultsContainer" ng-if='inputEntered'>
+        <span id="resultsbox1">
+          <img id="avatar" ng-src="{{avatar}}"><p id="username">{{username}}</p>
+        </span>
+        <span id="resultsbox2">
+          <p>has spent {{daysPlayed}} {{hoursPlayed}} hours playing Overwatch!</p>
+        </span>
+      </div>
+
+
+    </div>
+
+    <script type="text/javascript" src="./lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="./factories/temp.js"></script>
+  </body>
+</html>
