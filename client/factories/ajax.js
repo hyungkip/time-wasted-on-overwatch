@@ -1,21 +1,19 @@
 angular.module('time-spent-on-overwatch')
-  .factory('ajax', ['$http', function ($http) {
-    return {
+	.factory('ajax', ['$http', function ($http) {
+		return {
 
-      searchOverwatchProfile: function (blizzID) {
-        var baseUrl = 'https://owapi.net/api/v3/u/';
-        var url = baseUrl + blizzID + '/stats';
-        return $http({
-          method: 'GET',
-          url: url
-        })
-        .then(function (resp) {
-            return resp.data;
-        }).catch( function (error) {
-            return error;
-        });
-      }
-
-    }
-
-  }])
+			searchOverwatchProfile: function (blizzID) {
+				var baseUrl = 'https://owapi.net/api/v3/u/';
+				var url = baseUrl + blizzID + '/stats';
+				return $http({
+						method: 'GET',
+						url: url
+					})
+					.then(function (resp) {
+						return resp.data;
+					}).catch(function (error) {
+						return error;
+					});
+			}
+		}
+	}])

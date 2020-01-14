@@ -1,38 +1,39 @@
 angular.module('time-spent-on-overwatch')
-  .factory('helpers', [function () {
-    return {
+	.factory('helpers', [function () {
+		return {
 
-      formatId: function (id, tag) {
-        var full_id = id + '-' + tag;
-        console.log('here is full id', full_id);
-        return full_id;
-      },
+			formatId: function (id, tag) {
+				var full_id = id + '-' + tag;
+				console.log('here is full id', full_id);
+				return full_id;
+			},
 
-      showError: function (str) {
-        return $('#errorMessage').text(str).delay(7000).fadeOut();
-      },
+			showError: function (str) {
+				return $('#errorMessage').text(str).delay(7000).fadeOut();
+			},
 
-      packageData: function (statsData, playtimeData) {
-          console.log('STATSDATA', statsData, 'PLAYTIMEDATA', playtimeData)
-        function mergeDatasets (stats, playtimes) {
-          for (let hero in stats) {
-            for (let hero2 in playtimes) {
-              if (hero == hero2) {
-                stats[hero]['playtime'] == playtimes[hero2];
-              }
-            }
-          }
-          return stats;
-        }
+			packageData: function (statsData, playtimeData) {
+				console.log('STATSDATA', statsData, 'PLAYTIMEDATA', playtimeData)
 
-        let qpData = mergeDatasets(statsData['quickplay'], playtimeData['quickplay']);
-        let compData = mergeDatasets(statsData['competitive'], playtimeData['competitive'])
+				function mergeDatasets(stats, playtimes) {
+					for (let hero in stats) {
+						for (let hero2 in playtimes) {
+							if (hero == hero2) {
+								stats[hero]['playtime'] == playtimes[hero2];
+							}
+						}
+					}
+					return stats;
+				}
 
-        return {
-          'quickplay': qpData,
-          'competitive': compData
-        }
-      }
+				let qpData = mergeDatasets(statsData['quickplay'], playtimeData['quickplay']);
+				let compData = mergeDatasets(statsData['competitive'], playtimeData['competitive'])
 
-    }
-  }])
+				return {
+					'quickplay': qpData,
+					'competitive': compData
+				}
+			}
+
+		}
+	}])

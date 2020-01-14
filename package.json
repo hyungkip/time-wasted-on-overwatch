@@ -1,28 +1,27 @@
 {
-  "name": "time-spent-on-overwatch",
-  "version": "1.0.0",
-  "description": "Find out how much time you spent on Overwatch!",
-  "main": "./main/app.js",
-  "scripts": {
-    "serve": "nodemon ./server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hyungkip/time-spent-on-overwatch.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hyungkip/time-spent-on-overwatch/issues"
-  },
-  "homepage": "https://github.com/hyungkip/time-spent-on-overwatch#readme",
-  "dependencies": {
-    "angular": "^1.7.9",
-    "angular-ui-router": "^1.0.24",
-    "body-parser": "^1.15.2",
-    "bootstrap": "^4.4.1",
-    "d3": "^4.9.1",
-    "express": "^4.14.0",
-    "jquery": "^3.4.1"
-  }
+	"name": "time-spent-on-overwatch",
+	"version": "1.0.0",
+	"description": "Find out how much time you spent on Overwatch!",
+	"main": "./main/app.js",
+	"scripts": {
+		"serve": "node ./server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hyungkip/time-spent-on-overwatch.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/hyungkip/time-spent-on-overwatch/issues"
+	},
+	"homepage": "https://github.com/hyungkip/time-spent-on-overwatch#readme",
+	"dependencies": {
+		"angular": "^1.7.9",
+		"angular-ui-router": "^1.0.24",
+		"body-parser": "^1.15.2",
+		"bootstrap": "^4.4.1",
+		"express": "^4.14.0",
+		"jquery": "^3.4.1"
+	}
 }

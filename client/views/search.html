@@ -11,28 +11,6 @@
         <span id="errorMessage"></span>
     </div>
 
-    <!-- <div id="comparisonContainer" class="form-group">
-        <input type="text" id="idInput" class="form-control" ng-model="blizzardId" placeholder='Blizzard ID' aria-describedby="helpBlock"></input>
-        <input type="text" id="tagInput" class="form-control" ng-model="blizzardTag" placeholder='Tag' aria-describedby="helpBlock"></input>
-        <select id="regionInput" class="form-control" ng-model="blizzardRegion">
-            <option selected>US</option>
-            <option>EU</option>
-            <option>KR</option>
-        </select>
-
-        <input type="text" id="idInput2" class="form-control" ng-model="blizzardId2" placeholder='Blizzard ID 2' aria-describedby="helpBlock"></input>
-        <input type="text" id="tagInput2" class="form-control" ng-model="blizzardTag2" placeholder='Tag 2' aria-describedby="helpBlock"></input>
-        <select id="regionInput2" class="form-control" ng-model="blizzardRegion2">
-            <option selected>US</option>
-            <option>EU</option>
-            <option>KR</option>
-        </select>
-
-        <button type="button" id="enterButton" class="btn btn-warning" ng-click="compareProfiles(blizzardId, blizzardTag, blizzardRegion, blizzardId2, blizzardTag2, blizzardRegion2)">Enter</button>
-        <span id="errorMessage"></span>
-    </div> -->
-
-
     <div id="resultsContainer" ng-if='inputEntered'>
         <span id="resultsbox1">
             <img id="avatar" ng-src="{{avatar}}"><p id="username">{{username}}</p>
@@ -41,6 +19,4 @@
             <p>has spent {{daysPlayed}} days, {{hoursPlayed}} hours, {{minutesPlayed}} minutes playing Overwatch!</p>
         </span>
     </div>
-
-
 </div>
