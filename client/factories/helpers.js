@@ -15,7 +15,7 @@ angular.module('time-spent-on-overwatch')
       packageData: function (statsData, playtimeData) {
         function mergeDatasets (stats, playtimes) {
           for (let hero in stats) {
-            for (let hero2 in p laytimes) {
+            for (let hero2 in playtimes) {
               if (hero == hero2) {
                 stats[hero]['playtime'] == playtimes[hero2];
               }
@@ -29,7 +29,7 @@ angular.module('time-spent-on-overwatch')
 
         return {
           'quickplay': qpData,
-          'competitive', compData
+          'competitive': compData
         }
       }
 

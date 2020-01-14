@@ -1,14 +1,26 @@
 # Time-spent-on-overwatch
 Find out how much time you spent on Overwatch!
 
-## Motivation
-After taking on the rigorous hack reactor core curriculum, I had a case of Javascript fatigue. The purpose of the project was to pick myself back up on coding by developing something I'm genuinely interested in.
-
-## Features
-- Player playtime lookup through unofficial external API (official api N/A)
-
 ## Installation
 ```
 cd time-spent-on-overwatch
 npm install
 ```
+
+## Usage
+```
+npm run start
+```
+
+## Built With
+* HTML/CSS/Javascript
+* [Express](https://expressjs.com/en/api.html) - Back-end framework
+* [Angular](https://docs.angularjs.org/api) - Front-end framework
+* [Bootstrap](https://getbootstrap.com/) - Styling library
+* [jQuery](https://api.jquery.com/) - DOM manipulation library
+
+## Features
+- Player playtime lookup through unofficial external API (official api N/A)
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

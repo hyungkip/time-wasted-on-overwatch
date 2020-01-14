@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 app.use(bodyParser.json());
-app.use('/', express.static(__dirname + '/client'));
+app.use('/', express.static(__dirname));
 
 var port = process.env.PORT || 1337;
 
