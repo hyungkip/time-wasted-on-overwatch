@@ -9,12 +9,19 @@ angular.module('time-spent-on-overwatch')
         return;
       }
       var formattedId = helpers.formatId(id, tag);
-
       ajax.searchOverwatchProfile(formattedId).then(function (data) {
-        var data = data[region.toLowerCase()].heroes;
-        var statsData = data.stats;
-        var playtimeData = data.playtime;
-        var packagedData = helpers.packageData(statsData, playtimeData);
+          console.log('AJAX SUCCESS', data);
+          if (data.status == 403) {
+              helpers.showError('This profile is private');
+              return;
+          }
+        // var data = data[region.toLowerCase()].heroes;
+        // var statsData = data.stats;
+        // var playtimeData = data.playtime;
+        // var packagedData = helpers.packageData(statsData, playtimeData);
+        $scope.username = id;
+        return retrieveInformation(data[region.toLowerCase()].stats);
+
         return;
       }).catch(function (error) {
         helpers.showError('We could not retrieve your profile based on the info provided');
@@ -22,33 +29,27 @@ angular.module('time-spent-on-overwatch')
       });
     }
 
-    $scope.compareProfiles = function (id, tag, region, id2, tag2, region2) {
-      var formIncomplete = !id || !tag || !region || !id2 || !tag2 || !region2;
 
-      if (formIncomplete) {
-        helpers.showError('hello');
-        return;
-      }
-      var p1_formattedId = helpers.formatId(id, tag);
-      var p2_formattedId = helpers.formatId(id2, tag2);
+    var retrieveInformation = function (statsObj) {
+        console.log(statsObj.competitive, 'HERE IS OBJ COMP');
+        console.log(statsObj.quickplay, 'HERE IS OBJ QUICK');
+          //Format time played
+          var competitiveHoursPlayed = 0;
+          var quickplayHoursPlayed = 0;
+          competitiveHoursPlayed = statsObj.competitive.game_stats.time_played
+          quickplayHoursPlayed = statsObj.quickplay.game_stats.time_played
+          console.log('COMPETITIVEHOURSPLAYEd', competitiveHoursPlayed)
 
-      ajax.searchOverwatchProfile(p1_formattedId).then(function (p1_data) {
-        ajax.searchOverwatchProfile(p2_formattedId).then(function (p2_data) {
-          var p1_data = p1_data[region.toLowerCase()].heroes;
-          var p1_statsData = p1_data.stats;
-          var p1_playtimeData = p1_data.playtime;
-          var p1_packagedData = helpers.packageData(p1_statsData, p1_playtimeData);
 
-          var p2_data = p2_data[region2.toLowerCase()].heroes;
-          var p2_statsData = p2_data.stats;
-          var p2_playtimeData = p2_data.playtime;
-          var p2_packagedData = helpers.packageData(p2_statsData, p2_playtimeData);
-        })
-      }).catch(function (error) {
-        helpers.showError('hello there');
-        return console.log(error);
-      })
-    }
+          console.log('quickplayHoursPlayed', quickplayHoursPlayed)
+
+          var totalHoursPlayed = competitiveHoursPlayed + quickplayHoursPlayed;
+          $scope.daysPlayed = Math.floor(totalHoursPlayed/24);
+          $scope.hoursPlayed = Math.floor(totalHoursPlayed - $scope.daysPlayed*24);
+          $scope.minutesPlayed = Math.floor((totalHoursPlayed - $scope.hoursPlayed)*60);
+          $scope.inputEntered = true;
+          $scope.avatar = statsObj.competitive.overall_stats.avatar;
+        }
 
     //Users able to press enter to search. Quick and dirty jQuery
     $(document).ready(function(){

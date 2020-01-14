@@ -4,7 +4,7 @@ angular.module('time-spent-on-overwatch')
 
       searchOverwatchProfile: function (blizzID) {
         var baseUrl = 'https://owapi.net/api/v3/u/';
-        var url = baseUrl + blizzID + '/heroes';
+        var url = baseUrl + blizzID + '/stats';
         return $http({
           method: 'GET',
           url: url
@@ -12,7 +12,7 @@ angular.module('time-spent-on-overwatch')
         .then(function (resp) {
             return resp.data;
         }).catch( function (error) {
-            return console.log(error);
+            return error;
         });
       }
 

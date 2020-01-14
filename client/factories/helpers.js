@@ -9,10 +9,11 @@ angular.module('time-spent-on-overwatch')
       },
 
       showError: function (str) {
-        return $('#errorMessage').text(str).delay(5000).fadeOut();
+        return $('#errorMessage').text(str).delay(7000).fadeOut();
       },
 
       packageData: function (statsData, playtimeData) {
+          console.log('STATSDATA', statsData, 'PLAYTIMEDATA', playtimeData)
         function mergeDatasets (stats, playtimes) {
           for (let hero in stats) {
             for (let hero2 in playtimes) {
