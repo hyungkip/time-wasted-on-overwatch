@@ -3,7 +3,7 @@ angular.module('time-spent-on-overwatch')
 
 		$scope.searchProfile = function (id, tag, region) {
 			var formIncomplete = !id || !tag || !region;
-
+            $scope.inputEntered = false;
 			if (formIncomplete) {
 				helpers.showError('Please fill in all fields!');
 				return;
@@ -11,8 +11,12 @@ angular.module('time-spent-on-overwatch')
 			var formattedId = helpers.formatId(id, tag);
 			ajax.searchOverwatchProfile(formattedId).then(function (data) {
 				console.log('AJAX SUCCESS', data);
-				if (data.status == 403) {
+				if (data.status == 403 || data[region.toLowerCase()].stats.quickplay.game_stats.length + data[region.toLowerCase()].stats.competitive.game_stats.length == 0) {
 					helpers.showError('This profile is private');
+					return;
+				}
+                if (data.status == 404) {
+					helpers.showError('We could not retrieve your profile based on the info provided');
 					return;
 				}
 				$scope.username = id;
