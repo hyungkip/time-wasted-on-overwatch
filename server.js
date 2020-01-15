@@ -8,5 +8,5 @@ app.use('/', express.static(__dirname));
 var port = process.env.PORT || 1337;
 
 var server = app.listen(port, function () {
-	console.log('http://localhost:' + port);
+	console.log('Server is running on http://localhost:' + port);
 });

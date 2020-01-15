@@ -3,15 +3,16 @@
         <input type="text" id="idInput" class="form-control" ng-model="blizzardId" placeholder='Blizzard ID' aria-describedby="helpBlock"></input>
         <input type="text" id="tagInput" class="form-control" ng-model="blizzardTag" placeholder='Tag' aria-describedby="helpBlock"></input>
         <select id="regionInput" class="form-control" ng-model="blizzardRegion">
-            <option selected>US</option>
+            <option value="" selected disabled>Region</option>
+            <option>US</option>
             <option>EU</option>
             <option>KR</option>
         </select>
         <button type="button" id="enterButton" class="btn btn-warning" ng-click="searchProfile(blizzardId, blizzardTag, blizzardRegion)">Enter</button>
-        <span id="errorMessage"></span>
+        <span id="errorMessage">{{errorMessage}}</span>
     </div>
 
-    <div id="resultsContainer" ng-if='inputEntered'>
+    <div id="resultsContainer" ng-if="searchSuccessful">
         <span id="resultsbox1">
             <img id="avatar" ng-src="{{avatar}}"><p id="username">{{username}}</p>
         </span>

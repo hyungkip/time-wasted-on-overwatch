@@ -4,7 +4,7 @@ angular.module('time-spent-on-overwatch', [
 
 	$stateProvider.state('main', {
 		url: '/',
-		templateUrl: './client/views/search.html',
+		templateUrl: './src/views/search.html',
 		controller: 'search'
 	});
 

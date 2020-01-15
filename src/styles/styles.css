@@ -53,20 +53,20 @@ body {
 }
 
 #enterButton {
-    top: -2px;
+    top: -3px;
     position: relative;
 }
 
 #idInput {
-  width: calc(100% - 250px)
+  width: calc(100% - 270px)
 }
 
 #tagInput {
-  width: 75px;
+  width: 90px;
 }
 
 #regionInput {
-  width: 80px;
+  width: 100px;
 }
 
 #inputContainer {
