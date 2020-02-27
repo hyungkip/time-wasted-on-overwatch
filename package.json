@@ -8,14 +8,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/hyungkip/time-spent-on-overwatch.git"
+		"url": "git+https://github.com/haroldpark/time-spent-on-overwatch.git"
 	},
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/hyungkip/time-spent-on-overwatch/issues"
+		"url": "https://github.com/haroldpark/time-spent-on-overwatch/issues"
 	},
-	"homepage": "https://github.com/hyungkip/time-spent-on-overwatch#readme",
+	"homepage": "https://github.com/haroldpark/time-spent-on-overwatch#readme",
 	"dependencies": {
 		"angular": "^1.7.9",
 		"angular-ui-router": "^1.0.24",
