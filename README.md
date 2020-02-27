@@ -3,7 +3,7 @@ Find out how much time you spent on Overwatch!
 
 ## Installation
 ```
-https://github.com/haroldpark/time-spent-on-overwatch.git
+git clone https://github.com/haroldpark/time-spent-on-overwatch.git
 cd time-spent-on-overwatch
 npm install
 ```
